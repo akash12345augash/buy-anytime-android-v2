@@ -23,9 +23,16 @@ jobs:
           unzip -q /tmp/gradle.zip -d $HOME
           echo "$HOME/gradle-8.11.1/bin" >> $GITHUB_PATH
 
+      - name: Find Android project
+        run: |
+          echo "Searching for Android project..."
+          find . -name settings.gradle -o -name settings.gradle.kts
+
       - name: Build APK and AAB
         run: |
-          cd buy-anytime-android-v2
+          PROJECT=$(find . -name settings.gradle -o -name settings.gradle.kts | head -1 | xargs dirname)
+          echo "Android project: $PROJECT"
+          cd "$PROJECT"
           gradle assembleDebug bundleRelease --stacktrace
 
       - name: Upload APK and AAB
@@ -33,5 +40,5 @@ jobs:
         with:
           name: Buy-Anytime-Build
           path: |
-            buy-anytime-android-v2/app/build/outputs/apk/debug/app-debug.apk
-            buy-anytime-android-v2/app/build/outputs/bundle/release/app-release.aab
+            **/app/build/outputs/apk/debug/app-debug.apk
+            **/app/build/outputs/bundle/release/app-release.aab
