@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Buy Anytime — Shop Everything</title><meta name="description" content="Buy Anytime single-vendor online store"><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header class="header"><div class="brand" onclick="go('home')">Buy <span>Anytime</span></div><div class="search"><input id="search" placeholder="Search for products, brands and more"><button onclick="doSearch()">🔍</button></div><div class="actions"><button onclick="openLogin()">👤 <span>Account</span></button><button onclick="go('orders')">📦 <span>Orders</span></button><button id="cartButton" class="cart" type="button" aria-label="Open shopping cart">🛒 <span>Cart</span><b id="cartCount">0</b></button></div></header>
+<nav id="nav" class="nav"></nav>
+<div id="app"></div><div id="mobileActions" class="mobile-actions" aria-label="Quick actions"><button type="button" onclick="openLogin()" aria-label="Account">👤</button><button type="button" onclick="go('orders')" aria-label="Orders">📦</button><button type="button" id="mobileCartButton" onclick="openCart()" aria-label="Cart">🛒<b id="mobileCartCount">0</b></button></div>
+<footer><div><strong>Buy Anytime</strong><p>Everything you need. Anytime you want.</p></div><div><h4>Customer</h4><p>My Orders</p><p>Help & Support</p></div><div><h4>Business</h4><p>Single-vendor store</p><p>Admin dashboard</p></div><div><h4>Legal</h4><p>Privacy</p><p>Terms</p></div><small>© 2026 Buy Anytime. All rights reserved.</small></footer>
+<div id="modal" class="modal hidden"></div><script src="https://checkout.razorpay.com/v1/checkout.js"></script><script src="app.js"></script></body></html>

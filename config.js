@@ -1,0 +1,7 @@
+window.BUY_ANYTIME_CONFIG = {
+  API_BASE_URL: "https://YOUR-BACKEND.example.com",
+  SUPABASE_URL: "https://YOUR-PROJECT.supabase.co",
+  SUPABASE_PUBLISHABLE_KEY: "YOUR_SUPABASE_PUBLISHABLE_KEY",
+  RAZORPAY_KEY_ID: "rzp_live_YOUR_KEY_ID",
+  APP_ENV: "production"
+};
